@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encabezado Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <!-- Logo a la izquierda -->
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo de WaldWeiss" class="logo-img">
+        </div>
+        
+        <!-- Texto en transparencia -->
+        <div class="logo-text">
+            WaldWeiss
+        </div>
+        
+        <!-- Enlaces de Instagram y WhatsApp a la derecha -->
+        <div class="social-links">
+            <a href="https://www.instagram.com" target="_blank" class="social-icon">
+                <img src="img/instagram-icon.png" alt="Instagram">
+            </a>
+            <a href="https://wa.me/123456789" target="_blank" class="social-icon">
+                <img src="img/whatsapp-icon.png" alt="WhatsApp">
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- Menú de navegación con fondo negro -->
+<nav class="nav-menu">
+    <div class="hamburger-menu">
+        <div class="menu-button">Inicio</div>
+        <div class="menu-button">Empresa</div>
+        <div class="menu-button">Productos</div>
+        <div class="menu-button">Contacto</div>
+    </div>
+</nav>
+
+<!-- Carrusel de imágenes -->
+<div class="carousel">
+    <div class="carousel-item">
+        <img src="img/gallery1.jpg" alt="Imagen 1">
+    </div>
+    <div class="carousel-item">
+        <img src="img/gallery2.jpg" alt="Imagen 2">
+    </div>
+    <div class="carousel-item">
+        <img src="img/gallery3.jpg" alt="Imagen 3">
+    </div>
+    <div class="carousel-item">
+        <img src="img/gallery4.jpg" alt="Imagen 4">
+    </div>
+    <div class="carousel-item">
+        <img src="img/gallery5.jpg" alt="Imagen 5">
+    </div>
+</div>
+<!-- Contenedor para el feed de Instagram -->
+<br>
+<br>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Feed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .instagram-container {
+            width: 70%;
+            max-width: 100%;
+        }
+
+        .ad-container {
+            width: 25%;
+            background-color: #f4f4f4;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .ad-container p {
+            color: #555;
+            font-size: 16px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Contenedor de Instagram -->
+        <div class="instagram-container">
+            <blockquote class="instagram-media" 
+                        data-instgrm-permalink="https://www.instagram.com/waldweiss/" 
+                        data-instgrm-version="12" 
+                        style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; padding:0; width:100%; height:auto;">
+                <div style="padding:16px;">
+                    <a id="main_link" 
+                       href="https://www.instagram.com/waldweiss/" 
+                       style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" 
+                       target="_blank">
+                        <div style="display: flex; flex-direction: row; align-items: center;">
+                            <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div>
+                            <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div>
+                                <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>
+                            </div>
+                        </div>
+                        <div style="padding: 19% 0;"></div>
+                        <div style="display:block; height:50px; margin:0 auto 12px; width:50px;">
+                            <!-- SVG de Instagram -->
+                        </div>
+                        <div style="padding-top: 8px;">
+                            <div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver esta publicación en Instagram</div>
+                        </div>
+                        <div style="padding: 12.5% 0;"></div>
+                    </a>
+                    <p style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+                        <a href="https://www.instagram.com/waldweiss/" style="color:#c9c8cd; text-decoration:none;" target="_blank">
+                            Ver perfil completo en Instagram
+                        </a>
+                    </p>
+                </div>
+            </blockquote>
+            <script async src="https://www.instagram.com/embed.js"></script>
+        </div>
+
+        <!-- Contenedor de anuncios -->
+        <div class="ad-container">
+            <p>Espacio para anuncios</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+</body>
+</html>
+
