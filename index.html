@@ -37,12 +37,17 @@
                 </ul>
             </nav>
         </div>
+
         <div class="search-social">
             <input type="text" placeholder="Buscar..." class="search-input">
             <div class="social-links">
                 <a href="https://instagram.com/waldweiss/" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://wa.me/5491167065858" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
+
+                
+        <!-- Texto en transparencia -->
+        <div class="logo-text">
         </div>
     </header>
 
@@ -73,10 +78,15 @@
 <div class="elfsight-app-cdc7cab5-e927-4770-9056-c194d42cc4c0" data-elfsight-app-lazy></div>
     
     <script src="carousel.js"></script>
-    <section class="contact-section background-animation">
+    <br>
+    <div id="product-grid" class="w-full p-4">
+        <!-- Aquí se renderizará la grilla -->
+    </div>
+    <br>
+    <section class="contact-section">
         <div class="contact-container">
             <div class="contact-form-section">
-                <form action="mailto:info@cervezawaldweiss.com" method="POST" enctype="text/plain" class="contact-form">
+                <form id="contactForm" action="mailto:info@cervezawaldweiss.com" method="POST" enctype="text/plain" class="contact-form">
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
                         <input type="text" id="nombre" name="nombre" required>
@@ -89,7 +99,7 @@
                     
                     <div class="form-group">
                         <label for="consulta">Consulta</label>
-                        <textarea id="consulta" name="consulta" rows="4" required></textarea>
+                        <textarea id="consulta" name="consulta" rows="3" required></textarea>
                     </div>
                     
                     <div class="form-submit">
@@ -104,19 +114,45 @@
                     <p>Dirección: Calle Ejemplo 123</p>
                     <p>Teléfono: +54 9 11 6706 5858</p>
                     <p>Email: info@cervezawaldweiss.com</p>
+                    <a href="https://wa.me/5491167065858" target="_blank" class="whatsapp-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
                 </div>
-                
-                <a href="https://wa.me/5491167065858" target="_blank" class="whatsapp-icon">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
             </div>
         </div>
     </section>
-    <div id="product-grid" class="w-full p-4">
-        <!-- Aquí se renderizará la grilla -->
-    </div>
-
+    
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            const nombre = document.getElementById('nombre').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const consulta = document.getElementById('consulta').value.trim();
+    
+            if (nombre === '' || email === '' || consulta === '') {
+                event.preventDefault();
+                alert('Por favor, complete todos los campos');
+            }
+        });
+    </script>
+    
     <!-- Scripts -->
     <script src="beer-grid.js"></script>   
+
+<!-- Agrega este bloque justo antes del cierre del </body> -->
+<footer id="main-footer" class="footer">
+    <div class="footer-content">
+        <div class="footer-text">
+            <p>© 2024 Waldweiss - Desarrollador Web</p>
+        </div>
+        <div class="footer-social">
+            <a href="https://instagram.com/waldweiss/" target="_blank" class="social-link">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/5491167065858" target="_blank" class="social-link">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
