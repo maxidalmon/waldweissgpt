@@ -177,3 +177,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     renderGrid();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const footer = document.getElementById('main-footer');
+
+    // Función para mostrar/ocultar footer al hacer scroll
+    function toggleFooterVisibility() {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+
+        // Muestra el footer cuando se llega al final de la página
+        if (scrollPosition + windowHeight >= documentHeight - 100) {
+            footer.classList.add('visible');
+        } else {
+            footer.classList.remove('visible');
+        }
+    }
+
+    // Agregar event listener de scroll
+    window.addEventListener('scroll', toggleFooterVisibility);
+});
