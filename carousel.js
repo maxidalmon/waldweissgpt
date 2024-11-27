@@ -61,3 +61,62 @@ document.addEventListener('DOMContentLoaded', () => {
     // Iniciar el carrusel mostrando el primer slide
     startAutoSlide();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const productGrid = document.querySelector('.product-grid');
+    const productCards = document.querySelectorAll('.product-card');
+
+    productCards.forEach(card => {
+        card.addEventListener('click', (event) => {
+            event.stopPropagation();
+
+            // Si ya está seleccionada, deseleccionar
+            if (card.classList.contains('selected')) {
+                card.classList.remove('selected');
+                
+                // Restablecer posición original
+                card.style.top = '';
+                card.style.left = '';
+                card.style.transform = '';
+                return;
+            }
+
+            // Deseleccionar todas las tarjetas
+            productCards.forEach(c => {
+                c.classList.remove('selected');
+                c.style.top = '';
+                c.style.left = '';
+                c.style.transform = '';
+            });
+
+            // Obtener las coordenadas de la tarjeta original
+            const cardRect = card.getBoundingClientRect();
+            const gridRect = productGrid.getBoundingClientRect();
+
+            // Calcular el desplazamiento necesario para centrar
+            const centerX = (gridRect.width / 2) - (cardRect.width / 2);
+            const centerY = (gridRect.height / 2) - (cardRect.height / 2);
+
+            // Calcular el desplazamiento desde la posición original
+            const offsetX = (centerX - cardRect.left + gridRect.left) / card.offsetWidth;
+            const offsetY = (centerY - cardRect.top + gridRect.top) / card.offsetHeight;
+
+            // Establecer la transformación para centrar desde el punto original
+            card.style.transform = `translate(${offsetX * 100}%, ${offsetY * 100}%) scale(1.5)`;
+            card.classList.add('selected');
+        });
+    });
+
+    // Deseleccionar al hacer clic fuera de las tarjetas
+    document.addEventListener('click', (event) => {
+        const isClickInsideGrid = event.target.closest('.product-grid');
+        if (!isClickInsideGrid) {
+            productCards.forEach(card => {
+                card.classList.remove('selected');
+                card.style.top = '';
+                card.style.left = '';
+                card.style.transform = '';
+            });
+        }
+    });
+});
